@@ -80,7 +80,7 @@ import Bindings.LXC.AttachOptions
 #ccall lxc_container_new          , CString -> CString -> IO (Ptr <struct lxc_container>)
 #ccall lxc_container_get          , Ptr <struct lxc_container> -> IO CInt
 #ccall lxc_container_put          , Ptr <struct lxc_container> -> IO CInt
-#ccall get_wait_states            , Ptr CString -> IO CInt
+#ccall lxc_get_wait_states        , Ptr CString -> IO CInt
 #ccall lxc_get_global_config_item , CString -> IO CString
 #ccall lxc_get_version            , IO CString
 #ccall list_defined_containers    , CString -> Ptr (Ptr CString) -> Ptr (Ptr (Ptr <struct lxc_container>))
