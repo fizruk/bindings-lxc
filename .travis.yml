@@ -5,7 +5,7 @@ before_install:
   - apt-get download lxc
   - sudo dpkg --unpack lxc*.deb
   - sudo rm -f /var/lib/dpkg/info/lxc.postinst
-  - sudo dpkg --configure lxc
-  - sudo apt-get install -yf # To fix dependencies
+  - sudo dpkg --configure lxc || true # this will always fail
+  - sudo apt-get install -yf          # to fix dependencies
   # install LXC headers
   - sudo apt-get install lxc-dev
