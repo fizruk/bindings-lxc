@@ -19,7 +19,7 @@ library
   build-depends:       base         >=4.7   && <4.8
                      , bindings-DSL >=1.0   && <1.1
   extra-libraries:     lxc
-  extensions:
+  default-extensions:
     ForeignFunctionInterface
   exposed-modules:
     Bindings.LXC
