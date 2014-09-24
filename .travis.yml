@@ -2,11 +2,6 @@ language: haskell
 ghc: 7.8.3
 before_install:
   - sudo apt-get update
-  # install LXC without post-install scripts
-  - apt-get download lxc
-  - sudo dpkg --unpack lxc*.deb
-  - sudo rm -f /var/lib/dpkg/info/lxc.postinst
-  - sudo dpkg --configure lxc || true # this will always fail
-  - sudo apt-get install -yf          # to fix dependencies
-  # install LXC headers
-  - sudo apt-get install lxc-dev
+  - sudo apt-get install liblxc1 -y
+  - apt-get download lxc-dev
+  - sudo dpkg --force-all -i lxc-dev*.deb
