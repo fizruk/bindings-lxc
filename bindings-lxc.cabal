@@ -23,6 +23,9 @@ library
     ForeignFunctionInterface
   exposed-modules:
     Bindings.LXC
+    Bindings.LXC.Container
+    Bindings.LXC.AttachOptions
+    Bindings.LXC.Sys.Types
 
 source-repository head
   type: git
