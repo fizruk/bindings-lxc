@@ -1,1 +1,2 @@
 language: haskell
+before_install: sudo apt-get install lxc-dev
