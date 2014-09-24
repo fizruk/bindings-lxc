@@ -2,7 +2,7 @@ language: haskell
 before_install:
   - sudo apt-get update
   # install LXC without post-install scripts
-  - sudo apt-get download lxc
+  - apt-get download lxc
   - sudo dpkg --unpack lxc*.deb
   - sudo rm -f /var/lib/dpkg/info/lxc.postinst
   - sudo dpkg --configure lxc
