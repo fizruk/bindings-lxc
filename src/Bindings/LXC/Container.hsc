@@ -1,5 +1,6 @@
 #include <bindings.dsl.h>
 #include <lxc/lxccontainer.h>
+#include "bindings.lxc.container.h"
 
 module Bindings.LXC.Container where
 #strict_import
@@ -15,8 +16,22 @@ import Bindings.LXC.AttachOptions
 #num LXC_CREATE_QUIET
 #num LXC_CREATE_MAXFLAGS
 
+#starttype zfs_t
+#field zfsroot, CString
+#stoptype
+
+#starttype lvm_t
+#field vg       , CString
+#field lv       , CString
+#field thinpool , CString
+#stoptype
+
 #starttype struct bdev_specs
-#field fstype                   , CString
+#field fstype   , CString
+#field fssize   , <uint64_t>
+#field zfs      , <zfs_t>
+#field lvm      , <lvm_t>
+#field dir      , CString
 #stoptype
 
 #starttype struct lxc_snapshot
