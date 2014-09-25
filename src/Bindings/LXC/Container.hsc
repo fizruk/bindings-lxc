@@ -48,7 +48,7 @@ import Bindings.LXC.AttachOptions
 #field set_config_item          , FunPtr (Ptr <struct lxc_container> -> CString -> CString -> IO CBool)
 #field destroy                  , FunPtr (Ptr <struct lxc_container> -> IO CBool)
 #field save_config              , FunPtr (Ptr <struct lxc_container> -> CString -> IO CBool)
-#field create                   , FunPtr (Ptr <struct lxc_container> -> CString -> CString -> <struct bdev_specs> -> CInt -> Ptr CString -> IO CBool)
+#field create                   , FunPtr (Ptr <struct lxc_container> -> CString -> CString -> Ptr <struct bdev_specs> -> CInt -> Ptr CString -> IO CBool)
 #field rename                   , FunPtr (Ptr <struct lxc_container> -> CString -> IO CBool)
 #field reboot                   , FunPtr (Ptr <struct lxc_container> -> IO CBool)
 #field shutdown                 , FunPtr (Ptr <struct lxc_container> -> CInt -> IO CBool)
