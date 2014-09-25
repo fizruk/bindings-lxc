@@ -1,7 +1,7 @@
 name:                bindings-lxc
-version:             0.1.0.0
+version:             0.1
 synopsis:            Direct Haskell bindings to LXC (Linux containers) C API.
--- description:
+description:         The package provides direct bindings to LXC C API through @bindings-dsl@.
 homepage:            https://github.com/fizruk/bindings-lxc
 license:             BSD3
 license-file:        LICENSE
