@@ -67,7 +67,7 @@ import Bindings.LXC.AttachOptions
 #field rename                   , FunPtr (Ptr <struct lxc_container> -> CString -> IO CBool)
 #field reboot                   , FunPtr (Ptr <struct lxc_container> -> IO CBool)
 #field shutdown                 , FunPtr (Ptr <struct lxc_container> -> CInt -> IO CBool)
-#field clear_config             , FunPtr (Ptr <struct lxc_container> -> IO CBool)
+#field clear_config             , FunPtr (Ptr <struct lxc_container> -> IO ())
 #field clear_config_item        , FunPtr (Ptr <struct lxc_container> -> CString -> IO CBool)
 #field get_config_item          , FunPtr (Ptr <struct lxc_container> -> CString -> CString -> CInt -> IO CInt)
 #field get_running_config_item  , FunPtr (Ptr <struct lxc_container> -> CString -> IO CString)
