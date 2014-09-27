@@ -39,7 +39,7 @@ import Bindings.LXC.AttachOptions
 #field comment_pathname         , CString
 #field timestamp                , CString
 #field lxcpath                  , CString
-#field free                     , FunPtr (<struct lxc_snapshot> -> IO ())
+#field free                     , FunPtr (Ptr <struct lxc_snapshot> -> IO ())
 #stoptype
 
 #starttype struct lxc_container
@@ -98,7 +98,7 @@ import Bindings.LXC.AttachOptions
 #ccall lxc_get_wait_states        , Ptr CString -> IO CInt
 #ccall lxc_get_global_config_item , CString -> IO CString
 #ccall lxc_get_version            , IO CString
-#ccall list_defined_containers    , CString -> Ptr (Ptr CString) -> Ptr (Ptr (Ptr <struct lxc_container>))
-#ccall list_active_containers     , CString -> Ptr (Ptr CString) -> Ptr (Ptr (Ptr <struct lxc_container>))
-#ccall list_all_containers        , CString -> Ptr (Ptr CString) -> Ptr (Ptr (Ptr <struct lxc_container>))
+#ccall list_defined_containers    , CString -> Ptr (Ptr CString) -> Ptr (Ptr (Ptr <struct lxc_container>)) -> IO CInt
+#ccall list_active_containers     , CString -> Ptr (Ptr CString) -> Ptr (Ptr (Ptr <struct lxc_container>)) -> IO CInt
+#ccall list_all_containers        , CString -> Ptr (Ptr CString) -> Ptr (Ptr (Ptr <struct lxc_container>)) -> IO CInt
 #ccall lxc_log_close              , IO ()
