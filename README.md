@@ -11,11 +11,21 @@ For high-level Haskell LXC API see [lxc package](http://hackage.haskell.org/pack
 
 ## Requirements
 
-Before installation make sure you have LXC installed on your system with header files.
+Before installation make sure you have LXC installed on your system with header files and static library.
 
 On Ubuntu 14.04 LTS (Trusty Tahr):
 
 ```
+$ sudo apt-get install lxc-dev
+```
+
+On previous Ubuntu versions (including 12.04 LTS Precise Pangolin) standard repositories do not contain `liblxc1` package.
+You might want to use `ppa:ubuntu-lxc/stable` repository instead:
+
+```
+$ sudo apt-get install software-properties-common python-software-properties
+$ sudo add-apt-repository ppa:ubuntu-lxc/stable
+$ sudo apt-get update
 $ sudo apt-get install lxc-dev
 ```
 
