@@ -11,6 +11,8 @@ maintainer:          nickolay.kudasov@gmail.com
 category:            FFI
 build-type:          Simple
 extra-source-files:  README.md
+                   , CHANGELOG.md
+                   , include/bindings.lxc.container.h
 cabal-version:       >=1.10
 
 library
