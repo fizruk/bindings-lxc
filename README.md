@@ -7,6 +7,8 @@ Direct Haskell bindings to LXC (Linux containers) C API.
 
 The package provides direct bindings to LXC C API through @bindings-dsl@.
 
+For high-level Haskell LXC API see [lxc package](http://hackage.haskell.org/package/lxc).
+
 ## Requirements
 
 Before installation make sure you have LXC installed on your system with header files.
