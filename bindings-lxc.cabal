@@ -3,7 +3,7 @@ version:             0.2
 synopsis:            Direct Haskell bindings to LXC (Linux containers) C API.
 description:         The package provides direct bindings to LXC C API through @bindings-dsl@.
 
-                     For high-level Haskell LXC API see <http://hackage.haskell.org/package/lxc @lxc@ package>.
+                     For high-level Haskell LXC API see <http://hackage.haskell.org/package/lxc lxc package>.
 homepage:            https://github.com/fizruk/bindings-lxc
 bug-reports:         https://github.com/fizruk/bindings-lxc/issues
 license:             BSD3
