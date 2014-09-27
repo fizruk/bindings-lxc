@@ -82,7 +82,7 @@ import Bindings.LXC.AttachOptions
 #field console_getfd            , FunPtr (Ptr <struct lxc_container> -> Ptr CInt -> Ptr CInt -> IO CInt)
 #field console                  , FunPtr (Ptr <struct lxc_container> -> CInt -> CInt -> CInt -> CInt -> CInt -> IO CInt)
 #field attach                   , FunPtr (Ptr <struct lxc_container> -> C_lxc_attach_exec_t -> Ptr () -> Ptr <struct lxc_attach_options_t> -> Ptr <pid_t> -> IO CInt)
-#field attach_run_wait          , FunPtr (Ptr <struct lxc_container> -> C_lxc_attach_exec_t -> CString -> Ptr CString -> IO CInt)
+#field attach_run_wait          , FunPtr (Ptr <struct lxc_container> -> Ptr <struct lxc_attach_options_t> -> CString -> Ptr CString -> IO CInt)
 #field snapshot                 , FunPtr (Ptr <struct lxc_container> -> CString -> IO CInt)
 #field snapshot_list            , FunPtr (Ptr <struct lxc_container> -> Ptr (Ptr <struct lxc_snapshot>) -> IO CInt)
 #field snapshot_restore         , FunPtr (Ptr <struct lxc_container> -> CString -> CString -> IO CBool)
