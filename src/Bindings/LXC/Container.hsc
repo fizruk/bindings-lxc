@@ -74,7 +74,7 @@ import Bindings.LXC.AttachOptions
 #field get_keys                 , FunPtr (Ptr <struct lxc_container> -> CString -> CString -> CInt -> IO CInt)
 #field get_interfaces           , FunPtr (Ptr <struct lxc_container> -> IO (Ptr CString))
 #field get_ips                  , FunPtr (Ptr <struct lxc_container> -> CString -> CString -> CInt -> IO (Ptr CString))
-#field get_cgroup_item          , FunPtr (Ptr <struct lxc_container> -> CString -> Ptr CChar -> CInt -> IO CInt)
+#field get_cgroup_item          , FunPtr (Ptr <struct lxc_container> -> CString -> CString -> CInt -> IO CInt)
 #field set_cgroup_item          , FunPtr (Ptr <struct lxc_container> -> CString -> CString -> IO CBool)
 #field get_config_path          , FunPtr (Ptr <struct lxc_container> -> IO CString)
 #field set_config_path          , FunPtr (Ptr <struct lxc_container> -> CString -> IO CBool)
