@@ -2,7 +2,124 @@
 #include <lxc/lxccontainer.h>
 #include "bindings.lxc.container.h"
 
-module Bindings.LXC.Container where
+-----------------------------------------------------------------------------
+-- |
+-- Module      :  Bindings.LXC.Container
+-- Copyright   :  (c) Nickolay Kudasov 2014
+-- License     :  BSD-style (see the file LICENSE)
+--
+-- Maintainer  :  nickolay.kudasov@gmail.com
+--
+-- This module provides a set of functions to create, control and manage LXC containers.
+-- You can get more info about LXC at <https://help.ubuntu.com/lts/serverguide/lxc.html> and <https://linuxcontainers.org>.
+--
+-----------------------------------------------------------------------------
+module Bindings.LXC.Container (
+  -- * Flags
+  -- ** Clone flags
+  c'LXC_CLONE_KEEPNAME,
+  c'LXC_CLONE_KEEPMACADDR,
+  c'LXC_CLONE_SNAPSHOT,
+  c'LXC_CLONE_KEEPBDEVTYPE,
+  c'LXC_CLONE_MAYBE_SNAPSHOT,
+  c'LXC_CLONE_MAXFLAGS,
+  -- ** Create flags
+  c'LXC_CREATE_QUIET,
+  c'LXC_CREATE_MAXFLAGS,
+  -- * Data types and fields
+  -- ** Container
+  C'lxc_container(..),
+  p'lxc_container'error_string,
+  p'lxc_container'error_num,
+  p'lxc_container'daemonize,
+  p'lxc_container'config_path,
+  -- ** Snapshot
+  C'lxc_snapshot(..),
+  p'lxc_snapshot'name,
+  p'lxc_snapshot'comment_pathname,
+  p'lxc_snapshot'timestamp,
+  p'lxc_snapshot'lxcpath,
+  p'lxc_snapshot'free,
+  -- ** Back store device specs
+  C'bdev_specs(..),
+  p'bdev_specs'fstype,
+  p'bdev_specs'fssize,
+  p'bdev_specs'zfs,
+  p'bdev_specs'lvm,
+  p'bdev_specs'dir,
+  C'zfs_t(..),
+  p'zfs_t'zfsroot,
+  C'lvm_t(..),
+  p'lvm_t'vg,
+  p'lvm_t'lv,
+  p'lvm_t'thinpool,
+  -- * Container methods
+  -- ** Query container state
+  p'lxc_container'is_defined,
+  p'lxc_container'is_running,
+  p'lxc_container'state,
+  p'lxc_container'init_pid,
+  p'lxc_container'get_interfaces,
+  p'lxc_container'get_ips,
+  -- ** Container config
+  p'lxc_container'config_file_name,
+  p'lxc_container'get_config_path,
+  p'lxc_container'set_config_path,
+  p'lxc_container'load_config,
+  p'lxc_container'save_config,
+  p'lxc_container'get_keys,
+  p'lxc_container'set_config_item,
+  p'lxc_container'get_config_item,
+  p'lxc_container'get_running_config_item,
+  p'lxc_container'clear_config,
+  p'lxc_container'clear_config_item,
+  -- ** Control container state
+  p'lxc_container'start,
+  p'lxc_container'stop,
+  p'lxc_container'reboot,
+  p'lxc_container'shutdown,
+  p'lxc_container'freeze,
+  p'lxc_container'unfreeze,
+  p'lxc_container'wait,
+  -- ** Manage containers
+  p'lxc_container'create,
+  p'lxc_container'clone,
+  p'lxc_container'rename,
+  p'lxc_container'destroy,
+  -- ** Console
+  p'lxc_container'console_getfd,
+  p'lxc_container'console,
+  -- ** Attach
+  p'lxc_container'attach,
+  p'lxc_container'attach_run_wait,
+  -- ** Snapshots
+  p'lxc_container'snapshot,
+  p'lxc_container'snapshot_list,
+  p'lxc_container'snapshot_restore,
+  p'lxc_container'snapshot_destroy,
+  -- ** Misc
+  p'lxc_container'want_daemonize,
+  p'lxc_container'want_close_all_fds,
+  p'lxc_container'get_cgroup_item,
+  p'lxc_container'set_cgroup_item,
+  p'lxc_container'may_control,
+  p'lxc_container'add_device_node,
+  p'lxc_container'remove_device_node,
+  -- * Global LXC functions
+  -- ** Allocate and manage containers
+  c'lxc_container_new,
+  c'lxc_container_get,
+  c'lxc_container_put,
+  -- ** List containers
+  c'list_defined_containers,
+  c'list_active_containers,
+  c'list_all_containers,
+  -- ** Misc
+  c'lxc_get_wait_states,
+  c'lxc_get_global_config_item,
+  c'lxc_get_version,
+  c'lxc_log_close,
+) where
 #strict_import
 import Bindings.LXC.Sys.Types
 import Bindings.LXC.AttachOptions
