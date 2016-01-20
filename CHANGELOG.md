@@ -1,8 +1,11 @@
+0.2.1
+---
+* Relax upper bound for `base`
+
 0.2.0.1
 ---
-* better documentation
-* no changes in the interface
+* Improve documentation
 
 0.2
 ---
-* fixed types in `Bindings.LXC.Container`
+* Fix types in `Bindings.LXC.Container`
