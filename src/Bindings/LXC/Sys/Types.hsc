@@ -1,3 +1,5 @@
+{-# LANGUAGE CPP #-}
+
 #include <bindings.dsl.h>
 #include <stdlib.h>
 #include <stdint.h>
@@ -16,7 +18,9 @@
 module Bindings.LXC.Sys.Types where
 #strict_import
 
+#if __GLASGOW_HASKELL__ < 802
 type CBool = CInt
+#endif
 
 #integral_t pid_t
 #integral_t uint64_t
